@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HESA Entertainment | Independent Entertainment</title>
+
+  <meta
+    name="description"
+    content="HESA Entertainment is an independent entertainment project focused on discovering talent, developing artists, music, performance and digital entertainment."
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <style>
+    /* =========================================================
+       HESA ENTERTAINMENT
+       Single-file homepage
+       ========================================================= */
+
+    :root {
+      --black: #030303;
+      --dark: #080808;
+      --dark-2: #101010;
+      --silver: #f4f4f4;
+      --silver-2: #bcbcbc;
+      --muted: #858585;
+      --line: rgba(255,255,255,0.12);
+      --glass: rgba(255,255,255,0.045);
+      --accent: #ffffff;
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--silver);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--silver-2);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: #fff;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+      max-width: 850px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(3,3,3,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-mark {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.08em;
+    }
+
+    .brand-name {
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      font-weight: 600;
+      color: #d5d5d5;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      font-size: 13px;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      border: 1px solid rgba(255,255,255,0.45);
+      padding: 10px 18px;
+      transition: 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: #fff;
+      color: #000 !important;
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: 0;
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255,255,255,0.11), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(80,120,180,0.08), transparent 28%),
+        #030303;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      opacity: 0.45;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      right: -260px;
+      top: 20%;
+      box-shadow:
+        0 0 100px rgba(255,255,255,0.04),
+        inset 0 0 80px rgba(255,255,255,0.03);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 80px;
+      max-width: 850px;
+    }
+
+    .hero-label {
+      color: #999;
+      font-size: 12px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(72px, 13vw, 170px);
+      line-height: 0.78;
+      letter-spacing: -0.075em;
+      font-weight: 800;
+      background: linear-gradient(
+        120deg,
+        #ffffff 10%,
+        #8f8f8f 48%,
+        #ffffff 80%
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin-top: 34px;
+      font-size: clamp(17px, 2vw, 23px);
+      color: #c2c2c2;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      margin-top: 42px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 25px;
+      border: 1px solid rgba(255,255,255,0.5);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    .button.primary:hover {
+      background: #cfcfcf;
+    }
+
+    .button.secondary {
+      color: #fff;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-bottom {
+      position: absolute;
+      z-index: 3;
+      bottom: 35px;
+      left: 0;
+      right: 0;
+    }
+
+    .hero-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .hero-scroll {
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .hero-year {
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
+    .intro {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #070707;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .intro-statement {
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .intro-statement span {
+      color: #555;
+    }
+
+    /* =========================================================
+       AREAS
+       ========================================================= */
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 65px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .area {
+      min-height: 250px;
+      padding: 32px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .area:hover {
+      background: rgba(255,255,255,0.045);
+    }
+
+    .area-number {
+      color: #555;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+
+    .area-icon {
+      font-size: 34px;
+      margin: 45px 0 20px;
+      filter: grayscale(1);
+    }
+
+    .area h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .area p {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       TALENT
+       ========================================================= */
+
+    .talent {
+      background:
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.06), transparent 30%),
+        #050505;
+    }
+
+    .talent-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      margin-top: 65px;
+      align-items: start;
+    }
+
+    .talent-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .talent-item {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.25s;
+    }
+
+    .talent-item:hover {
+      padding-left: 12px;
+    }
+
+    .talent-item span:first-child {
+      font-size: 19px;
+    }
+
+    .talent-item span:last-child {
+      color: #555;
+      font-size: 12px;
+    }
+
+    .talent-message {
+      border: 1px solid var(--line);
+      padding: 55px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.07), transparent 50%),
+        #080808;
+    }
+
+    .talent-message h3 {
+      font-size: clamp(35px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .talent-message p {
+      margin-top: 25px;
+      color: #888;
+      max-width: 500px;
+    }
+
+    /* =========================================================
+       AUDITIONS
+       ========================================================= */
+
+    .auditions {
+      border-top: 1px solid var(--line);
+      background:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        #060606;
+      background-size: 100% 60px;
+    }
+
+    .audition-box {
+      margin-top: 65px;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: clamp(35px, 7vw, 90px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.09), transparent 45%);
+    }
+
+    .audition-box::before,
+    .audition-box::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      background: #fff;
+      top: 30px;
+    }
+
+    .audition-box::before {
+      left: 30px;
+    }
+
+    .audition-box::after {
+      right: 30px;
+    }
+
+    .audition-box h3 {
+      font-size: clamp(38px, 6vw, 75px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .audition-box p {
+      max-width: 620px;
+      margin: 25px auto 35px;
+      color: #888;
+    }
+
+    /* =========================================================
+       VISION
+       ========================================================= */
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      margin-top: 65px;
+    }
+
+    .vision-card {
+      padding: 45px 35px;
+      background: #060606;
+      min-height: 230px;
+    }
+
+    .vision-card strong {
+      font-size: 42px;
+      display: block;
+      margin-bottom: 25px;
+      color: #777;
+    }
+
+    .vision-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .vision-card p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       SOCIAL / CTA
+       ========================================================= */
+
+    .final-cta {
+      text-align: center;
+      padding: 150px 0;
+      border-top: 1px solid var(--line);
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 35%),
+        #030303;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(55px, 10vw, 130px);
+      line-height: 0.85;
+      letter-spacing: -0.07em;
+    }
+
+    .final-cta p {
+      color: #777;
+      margin: 30px auto;
+      max-width: 550px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 45px 0;
+      background: #020202;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .footer-brand small {
+      display: block;
+      margin-top: 5px;
+      color: #666;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #777;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .copyright {
+      color: #444;
+      font-size: 11px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 6%;
+        background: rgba(3,3,3,0.97);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-cta {
+        border: 0;
+        padding: 12px 0;
+      }
+
+      .intro-grid,
+      .talent-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .vision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(70px, 20vw, 130px);
+      }
+
+      .hero-bottom-inner {
+        align-items: center;
+      }
+
+      .talent-message {
+        padding: 35px;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .areas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .area {
+        min-height: 210px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-bottom {
+        bottom: 20px;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .hero-year {
+        margin-left: auto;
+      }
+
+      .talent-message {
+        min-height: 300px;
+      }
+
+      .audition-box {
+        padding: 45px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#home" class="brand" aria-label="HESA Entertainment Home">
+        <span class="brand-mark">HESA</span>
+        <span class="brand-name">ENTERTAINMENT</span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#areas">What We Do</a></li>
+        <li><a href="#talent">Talent</a></li>
+        <li><a href="#auditions">Auditions</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li>
+          <a href="#auditions" class="nav-cta">Apply Now</a>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container hero-content reveal">
+
+        <div class="hero-label">
+          INDEPENDENT ENTERTAINMENT
+        </div>
+
+        <h1>HESA</h1>
+
+        <p class="hero-subtitle">
+          Discovering talent. Developing artists.
+          Creating original entertainment.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#auditions" class="button primary">
+            Global Auditions
+          </a>
+
+          <a href="#about" class="button secondary">
+            Explore HESA
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom">
+        <div class="container hero-bottom-inner">
+
+          <div class="hero-scroll">
+            Scroll to explore
+          </div>
+
+          <div class="hero-year">
+            EST. 2026
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
+
+    <section class="section intro" id="about">
+
+      <div class="container intro-grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Who We Are
+          </div>
+
+          <div class="intro-statement">
+            An independent entertainment project
+            built around <span>talent, creativity and
+            new possibilities.</span>
+          </div>
+
+        </div>
+
+        <div class="reveal">
+
+          <p class="section-description">
+            HESA Entertainment is focused on discovering
+            emerging artists and creators, developing
+            creative projects and building opportunities
+            across music, performance and digital
+            entertainment.
+          </p>
+
+          <p class="section-description">
+            Our vision is global — connecting new talent,
+            new stories and new ideas with audiences
+            around the world.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHAT WE DO
+         ===================================================== -->
+
+    <section class="section" id="areas">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            What We Do
+          </div>
+
+          <h2 class="section-title">
+            BUILDING THE NEXT
+            GENERATION OF ENTERTAINMENT.
+          </h2>
+
+          <p class="section-description">
+            From artist discovery to original digital
+            projects, HESA explores multiple sides of
+            entertainment.
+          </p>
+
+        </div>
+
+
+        <div class="areas-grid reveal">
+
+          <article class="area">
+            <div class="area-number">01</div>
+            <div class="area-icon">🎤</div>
+            <h3>Artists</h3>
+            <p>
+              Discovering emerging singers, rappers,
+              performers and creative talent.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">02</div>
+            <div class="area-icon">♫</div>
+            <h3>Music</h3>
+            <p>
+              Exploring music projects, performances
+              and original creative work.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">03</div>
+            <div class="area-icon">✦</div>
+            <h3>Performance</h3>
+            <p>
+              Supporting dancers, performers and
+              multi-talented artists.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">04</div>
+            <div class="area-icon">▣</div>
+            <h3>Digital</h3>
+            <p>
+              Creating digital entertainment and
+              new forms of online content.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">05</div>
+            <div class="area-icon">◎</div>
+            <h3>Collaborations</h3>
+            <p>
+              Connecting artists, creators and
+              creative communities.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">06</div>
+            <div class="area-icon">◉</div>
+            <h3>Global Talent</h3>
+            <p>
+              Looking beyond borders for new voices,
+              ideas and talent.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">07</div>
+            <div class="area-icon">◆</div>
+            <h3>Future Groups</h3>
+            <p>
+              Exploring future group concepts,
+              projects and creative teams.
+            </p>
+          </article>
+
+          <article class="area">
+            <div class="area-number">08</div>
+            <div class="area-icon">→</div>
+            <h3>Future Projects</h3>
+            <p>
+              Building new entertainment ideas
+              for the next generation.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TALENT
+         ===================================================== -->
+
+    <section class="section talent" id="talent">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Talent
+          </div>
+
+          <h2 class="section-title">
+            YOUR TALENT.
+            YOUR IDENTITY.
+            YOUR STAGE.
+          </h2>
+
+        </div>
+
+
+        <div class="talent-layout">
+
+          <div class="talent-list reveal">
+
+            <div class="talent-item">
+              <span>01 — Singers</span>
+              <span>VOCALS</span>
+            </div>
+
+            <div class="talent-item">
+              <span>02 — Rappers</span>
+              <span>HIP-HOP</span>
+            </div>
+
+            <div class="talent-item">
+              <span>03 — Dancers</span>
+              <span>PERFORMANCE</span>
+            </div>
+
+            <div class="talent-item">
+              <span>04 — Musicians</span>
+              <span>MUSIC</span>
+            </div>
+
+            <div class="talent-item">
+              <span>05 — Performers</span>
+              <span>STAGE</span>
+            </div>
+
+            <div class="talent-item">
+              <span>06 — Creators</span>
+              <span>DIGITAL</span>
+            </div>
+
+            <div class="talent-item">
+              <span>07 — Multi-talented Artists</span>
+              <span>ALL-ROUND</span>
+            </div>
+
+          </div>
+
+
+          <div class="talent-message reveal">
+
+            <div class="eyebrow">
+              HESA Global
+            </div>
+
+            <h3>
+              DIFFERENT
+              TALENTS.<br>
+              ONE STAGE.
+            </h3>
+
+            <p>
+              We are interested in individuality,
+              creativity and potential. Whether your
+              strength is music, dance, performance,
+              content or something completely unique,
+              HESA is building a space for emerging
+              talent.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUDITIONS
+         ===================================================== -->
+
+    <section class="section auditions" id="auditions">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            HESA Global Auditions
+          </div>
+
+          <h2 class="section-title">
+            NOW OPEN.
+          </h2>
+
+          <p class="section-description">
+            Your talent. Your identity. Your stage.
+          </p>
+
+        </div>
+
+
+        <div class="audition-box reveal">
+
+          <h3>
+            READY TO BE
+            DISCOVERED?
+          </h3>
+
+          <p>
+            HESA is exploring new talent across
+            multiple creative categories. Applications
+            are open globally for emerging artists and
+            creators.
+          </p>
+
+          <!--
+            IMPORTANT:
+            Replace the # below with your real application
+            form URL when you create one.
+          -->
+
+          <a href="#apply" class="button primary">
+            Apply for Free →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VISION
+         ===================================================== -->
+
+    <section class="section" id="vision">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            The Vision
+          </div>
+
+          <h2 class="section-title">
+            GLOBAL VISION.
+            NEW TALENT.
+            NEW STORIES.
+          </h2>
+
+        </div>
+
+
+        <div class="vision-grid reveal">
+
+          <article class="vision-card">
+            <strong>01</strong>
+            <h3>Discover</h3>
+            <p>
+              Find emerging voices, performers and
+              creators with something different to offer.
+            </p>
+          </article>
+
+          <article class="vision-card">
+            <strong>02</strong>
+            <h3>Develop</h3>
+            <p>
+              Explore opportunities for creative growth,
+              collaboration and artistic development.
+            </p>
+          </article>
+
+          <article class="vision-card">
+            <strong>03</strong>
+            <h3>Create</h3>
+            <p>
+              Turn ideas, talent and creativity into
+              original entertainment projects.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL CTA
+         ===================================================== -->
+
+    <section class="final-cta" id="apply">
+
+      <div class="container reveal">
+
+        <div class="eyebrow" style="justify-content:center;">
+          HESA Entertainment
+        </div>
+
+        <h2>
+          CREATE.<br>
+          INSPIRE.<br>
+          BECOME.
+        </h2>
+
+        <p>
+          The journey has just begun.
+          Follow HESA Entertainment as we discover
+          talent, create projects and build what comes next.
+        </p>
+
+        <!-- Replace these links with your real social profiles -->
+
+        <div class="hero-actions" style="justify-content:center;">
+
+          <a
+            href="https://instagram.com/hesaentertainment"
+            target="_blank"
+            rel="noopener"
+            class="button primary"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://twitter.com/hesaent"
+            target="_blank"
+            rel="noopener"
+            class="button secondary"
+          >
+            X / Twitter
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          HESA
+          <small>
+            INDEPENDENT ENTERTAINMENT
+          </small>
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#about">About</a>
+          <a href="#areas">What We Do</a>
+          <a href="#talent">Talent</a>
+          <a href="#auditions">Auditions</a>
+          <a href="#vision">Vision</a>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 HESA Entertainment. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    /* Header background on scroll */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+
+    /* Mobile menu */
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      menuButton.textContent = isOpen ? "×" : "☰";
+
+    });
+
+
+    /* Close mobile menu after clicking a link */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuButton.textContent = "☰";
+
+      });
+
+    });
+
+
+    /* Scroll reveal animation */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+  </script>
+
+</body>
+</html>
